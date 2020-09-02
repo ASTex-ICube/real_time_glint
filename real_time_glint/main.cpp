@@ -9,7 +9,7 @@ std::map<std::string, std::string> sceneInfo = {
 
 int main(int argc, char *argv[])
 {
-	std::string sceneName = SceneRunner::parseCLArgs(argc, argv, sceneInfo);
+	std::string sceneName = (argc == 1) ? "glint" : SceneRunner::parseCLArgs(argc, argv, sceneInfo);
 
 	SceneRunner runner("Real Time Glint - " + sceneName);
 	std::unique_ptr<Scene> scene;

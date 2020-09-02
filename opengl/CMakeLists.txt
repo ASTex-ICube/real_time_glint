@@ -1,4 +1,4 @@
-set(target opengl)
+project(opengl LANGUAGES CXX)
 
 set(opengl_SOURCES
         openglogl.h
@@ -28,16 +28,21 @@ set(opengl_SOURCES
         imgui/imstb_textedit.h
         imgui/imstb_truetype.h)
 
-add_library(${target} STATIC ${opengl_SOURCES})
+add_library(${PROJECT_NAME} STATIC ${opengl_SOURCES})
 
-target_include_directories(${target} PUBLIC glad/include)
+target_include_directories(${PROJECT_NAME} PUBLIC glad/include)
 
-target_link_libraries(${target} PUBLIC glm)
+target_link_libraries(${PROJECT_NAME} PUBLIC glm)
 
-target_link_libraries(${target} PRIVATE assimp::assimp)
+target_link_libraries(${PROJECT_NAME} PRIVATE assimp::assimp)
 
-if( UNIX AND NOT APPLE )
-    target_link_libraries(${target} PUBLIC ${CMAKE_DL_LIBS})
+IF (MSVC)
+    target_link_libraries(${PROJECT_NAME} PUBLIC glm)
+    target_link_libraries(${PROJECT_NAME} PUBLIC assimp::assimp)
+else()
+    target_link_libraries(${PROJECT_NAME} PUBLIC assimp)
+    target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_DL_LIBS})
 endif()
+
 
 

@@ -1,16 +1,17 @@
-set(target real_time_glint)
+
+project(real_time_glint LANGUAGES CXX)
 set( real_time_glint_SOURCES
 	main.cpp
 	sceneglint.cpp sceneglint.h )
 
-add_executable( ${target} ${real_time_glint_SOURCES} )
+add_executable( ${PROJECT_NAME} ${real_time_glint_SOURCES} )
 
-target_compile_definitions(${target}
+target_compile_definitions(${PROJECT_NAME}
 		PRIVATE
 		GLFW_INCLUDE_NONE
 		)
 
-target_link_libraries( ${target}
+target_link_libraries( ${PROJECT_NAME}
 		PRIVATE
 		opengl
 		glfw

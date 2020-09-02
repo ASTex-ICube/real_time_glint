@@ -47,6 +47,10 @@ The libraries used in this project are:
 
 If you modify the ``glsl`` code, don't forget to re-run cmake.
 
+MacOS is not supported in this implementation, because we use 1,024 array levels
+in our array texture, which requires OpenGl 4.5 to have at least 2,048 array
+levels (<https://www.khronos.org/opengl/wiki/Array_Texture>).
+
 Requirements. Based on readme.md of [OpenGL 4 Cookbook](https://github.com/PacktPublishing/OpenGL-4-Shading-Language-Cookbook-Third-Edition).
 -------------
 To compile this example, you'll need the following:

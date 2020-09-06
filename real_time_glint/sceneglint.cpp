@@ -12,7 +12,7 @@ SceneGlint::SceneGlint() :
 	tPrev(0.0f),
 	lightPos(5.0f, 5.0f, 5.0f, 1.0f),
 	objectOrientation(0.),
-	sphere("../media/sphere/sphere.obj"),
+	sphere(MEDIA_PATH + std::string("sphere/sphere.obj")),
 	camera(glm::vec3(0., 0., 2.2)),
 	maxAnisotropy(8.f),
 	microfacetRelativeArea(1.f),
@@ -36,7 +36,10 @@ void SceneGlint::initScene() {
 	// Load dictionary of marginal distributions
 	int numberOfLevels = 16;
 	int numberOfDistributionsPerChannel = 64;
-	GLuint dicoTex = Texture::loadMultiscaleMarginalDistributions("../media/dictionary/dict_16_192_64_0p5_0p02", numberOfLevels, numberOfDistributionsPerChannel);
+
+	GLuint dicoTex = Texture::loadMultiscaleMarginalDistributions(MEDIA_PATH+std::string("dictionary/dict_16_192_64_0p5_0p02"), numberOfLevels, numberOfDistributionsPerChannel);
+//	GLuint dicoTex = Texture::loadMultiscaleMarginalDistributions("../media/dictionary/dict_16_192_64_0p5_0p02", numberOfLevels, numberOfDistributionsPerChannel);
+
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_1D_ARRAY, dicoTex);
 
@@ -98,6 +101,7 @@ void SceneGlint::update(float t, GLFWwindow* window) {
 	prog.setUniform("MicrofacetRelativeArea", microfacetRelativeArea);
 	prog.setUniform("MaxAnisotropy", maxAnisotropy);
 	prog.setUniform("Material.LogMicrofacetDensity", logMicrofacetDensity);
+	prog.setUniform("DictionaryTex", 0);  //layout binding not supported on 4.1 mac
 }
 
 void SceneGlint::render()
@@ -130,8 +134,12 @@ void SceneGlint::setMatrices()
 
 void SceneGlint::compileAndLinkShader() {
 	try {
-		prog.compileShader("shader/glint.vert.glsl");
-		prog.compileShader("shader/glint.frag.glsl");
+		prog.compileShader( (SHADER_PATH+std::string("glint.vert.glsl")).c_str() );
+		prog.compileShader( (SHADER_PATH+std::string("glint.frag.glsl")).c_str() );
+
+		// prog.compileShader("shader/glint.vert.glsl");
+		// prog.compileShader("shader/glint.frag.glsl");
+
 		prog.link();
 		prog.use();
 	}

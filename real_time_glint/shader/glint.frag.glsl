@@ -1,4 +1,4 @@
-#version 450
+#version 410
 
 // The MIT License
 // Copyright © 2020 Xavier Chermain (ICUBE), Basile Sauvage (ICUBE), Jean-Michel Dishler (ICUBE) and Carsten Dachsbacher (KIT)
@@ -39,7 +39,7 @@ uniform vec3 CameraPosition;
 uniform float MicrofacetRelativeArea;
 uniform float MaxAnisotropy;
 
-layout(binding = 0) uniform sampler1DArray DictionaryTex; // Array of 1D textures, containing the marginal distributions (the dictionary)
+uniform sampler1DArray DictionaryTex; // Array of 1D textures, containing the marginal distributions (the dictionary)
 
 layout(location = 0) out vec4 FragColor;
 

@@ -32,17 +32,14 @@ add_library(${PROJECT_NAME} STATIC ${opengl_SOURCES})
 
 target_include_directories(${PROJECT_NAME} PUBLIC glad/include)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC glm)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE assimp::assimp)
-
 IF (MSVC)
     target_link_libraries(${PROJECT_NAME} PUBLIC glm)
+    target_link_libraries(${PROJECT_NAME} PUBLIC assimp::assimp)
+elseif(MAC)
     target_link_libraries(${PROJECT_NAME} PUBLIC assimp::assimp)
 else()
     target_link_libraries(${PROJECT_NAME} PUBLIC assimp)
     target_link_libraries(${PROJECT_NAME} PUBLIC ${CMAKE_DL_LIBS})
 endif()
-
 
 

@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.0)
 set (CMAKE_CXX_STANDARD 17)
 set(CXX_STANDARD_REQUIRED ON)
 
-project (OPENGL)
+project (GLINT)
 
 if(MSVC)
   add_definitions(/DNOMINMAX)
@@ -21,6 +21,10 @@ find_package( OpenGL REQUIRED )
 find_package(assimp CONFIG REQUIRED )
 
 include_directories( opengl )
+if(APPLE)
+	include_directories(/usr/local/include/)
+	link_directories(/usr/local/lib/)
+endif()
 
 add_subdirectory( opengl )
 add_subdirectory( real_time_glint )

@@ -18,7 +18,7 @@
 
 class Model {
 public:
-	Model(char* path)
+	Model(const std::string& path)
 	{
 		loadModel(path);
 	}
@@ -28,7 +28,7 @@ private:
 	std::vector<Mesh> meshes;
 	std::string directory;
 
-	void loadModel(std::string path);
+	void loadModel(const std::string& path);
 	void processNode(aiNode* node, const aiScene* scene);
 	Mesh processMesh(aiMesh* mesh, const aiScene* scene);
 };

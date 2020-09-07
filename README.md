@@ -47,10 +47,6 @@ The libraries used in this project are:
 
 If you modify the ``glsl`` code, don't forget to re-run cmake.
 
-MacOS is not supported in this implementation, because we use 1,024 array levels
-in our array texture, which requires OpenGl 4.5 to have at least 2,048 array
-levels (<https://www.khronos.org/opengl/wiki/Array_Texture>).
-
 Requirements. Based on readme.md of [OpenGL 4 Cookbook](https://github.com/PacktPublishing/OpenGL-4-Shading-Language-Cookbook-Third-Edition).
 -------------
 To compile this example, you'll need the following:
@@ -139,6 +135,12 @@ vcpkg.exe install assimp
 
 <img src="http://i.imgur.com/cQe3Drp.png" alt="vcpkg-cmake-toolchain">
 
+Tips for compiling on mac osX
+---------------------------------------------
+Use [HomeBrew] for dependencies (and cmake)
+
+Tested on MacBookPro 2020 with AMD Radeon Pro 5500M
+
 OpenGL Function Loading
 -----------------------
 
@@ -146,7 +148,10 @@ An OpenGL header file and a function loader for a 4.5 core profile are
 included with this project. They were generated using
 [GLAD][]. This loader should also work on MacOS under a 4.1 core profile, but of course not all functions will load.
 
-The code has been tested with OpenGL 4.5 on Windows.
+The code has been tested with:
+- OpenGL 4.5 on Windows,
+- OpenGL 4.6 on Linux,
+- OpenGL 4.1 on Mac OS/X,
 
 [GLM]: http://glm.g-truc.net
 [GLFW]:  http://glfw.org
@@ -160,3 +165,4 @@ The code has been tested with OpenGL 4.5 on Windows.
 [tinyexr]: https://github.com/syoyo/tinyexr
 [stb]: https://github.com/nothings/stb
 [Dear ImGui]: https://github.com/ocornut/imgui
+[HomeBrew]: https://brew.sh/index_fr

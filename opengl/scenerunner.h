@@ -92,7 +92,11 @@ public:
 
         // Setup Platform/Renderer bindings
         ImGui_ImplGlfw_InitForOpenGL(window, true);
+#ifndef __APPLE__
         ImGui_ImplOpenGL3_Init("#version 450");
+#else
+        ImGui_ImplOpenGL3_Init("#version 410");
+#endif
     }
 
     int run(std::unique_ptr<Scene> scene) {        

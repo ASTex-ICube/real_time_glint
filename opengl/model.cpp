@@ -25,7 +25,7 @@ void Model::Draw(GLSLProgram& shader)
 		meshes[i].Draw(shader);
 }
 
-void Model::loadModel(std::string path)
+void Model::loadModel(const std::string& path)
 {
 	Assimp::Importer importer;
 	const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs | aiProcess_CalcTangentSpace);

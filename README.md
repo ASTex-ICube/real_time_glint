@@ -158,6 +158,7 @@ included with this project. They were generated using
 [GLAD][]. This loader should also work on MacOS under a 4.1 core profile, but of course not all functions will load.
 
 The code has been tested with:
+------------------------------
 - OpenGL 4.5 on Windows,
 - OpenGL 4.6 on Linux,
 - OpenGL 4.1 on Mac OS/X,

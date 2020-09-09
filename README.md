@@ -1,11 +1,17 @@
 Procedural Physically based BRDF for Real-Time Rendering of Glints
 ==================================================================
 
-The OpenGL 4.5 implementation of the paper: Procedural Physically based BRDF for
-Real-Time Rendering of Glints.
+The OpenGL implementation of the paper: **Procedural Physically based BRDF for
+Real-Time Rendering of Glints**.
 
-Xavier Chermain (ICUBE), Basile Sauvage (ICUBE), Jean-Michel Dishler (ICUBE) and
-Carsten Dachsbacher (KIT).
+[Xavier Chermain](http://igg.unistra.fr/People/chermain/)
+([ICUBE](https://icube.unistra.fr/en/)), 
+[Basile Sauvage](https://igg.icube.unistra.fr/index.php/Basile_Sauvage)
+([ICUBE](https://icube.unistra.fr/en/)), 
+[Jean-Michel Dishler](https://dpt-info.u-strasbg.fr/~dischler/)
+([ICUBE](https://icube.unistra.fr/en/)) and 
+[Carsten Dachsbacher](https://cg.ivd.kit.edu/english/dachsbacher/)
+([KIT](https://www.kit.edu/english/index.php)).
 
 Accepted for [Pacific Graphic 2020](https://pg2020.org/) and for CGF special issue.
 

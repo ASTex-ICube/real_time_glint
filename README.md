@@ -9,11 +9,16 @@ Carsten Dachsbacher (KIT).
 
 Accepted for [Pacific Graphic 2020](https://pg2020.org/) and for CGF special issue.
 
+* [Project page](http://igg.unistra.fr/People/chermain/real_time_glint/)
+* [Paper](http://igg.unistra.fr/People/chermain/assets/pdf/Chermain2020Procedural.pdf)
+* [Video](http://igg.unistra.fr/People/chermain/assets/avi/Chermain2020ProceduralVideo.mp4)
+* [Bibtex](http://igg.unistra.fr/People/chermain/assets/Chermain2020ProceduralBibtex.txt)
+* [Shadertoy](https://www.shadertoy.com/view/WtsBRN)
+
 The implementation reproduces real-time editing of the BRDF parameters, as shown
 in the video of the paper, from 0:42 to 1:40.
 
-GitHub repository: <https://github.com/ASTex-ICube/real_time_glint>. See
-<https://github.com/ASTex-ICube/real_time_glint_dictgenerator> to know how to
+See <https://github.com/ASTex-ICube/real_time_glint_dictgenerator> to know how to
 generate the dictionary used by the renderer.
 
 A high level speudo code is available in the appendix of the paper.
@@ -28,8 +33,6 @@ The files are organized as follows:
   * `media/dictionary`: the dictionary used in the paper,
   * `media/sphere`: the mesh of the sphere,
 * `opengl`: files of the OpenGL framework.
-
-After the build, launch the code with the command parameter `glint`.
 
 The OpenGL framework is based on 
 [OpenGL 4 Cookbook](https://github.com/PacktPublishing/OpenGL-4-Shading-Language-Cookbook-Third-Edition)

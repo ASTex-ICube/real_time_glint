@@ -18,7 +18,7 @@ Accepted for [Pacific Graphic 2020](https://pg2020.org/) and for CGF special iss
 * [Project page](http://igg.unistra.fr/People/chermain/real_time_glint/)
 * [Paper](http://igg.unistra.fr/People/chermain/assets/pdf/Chermain2020Procedural.pdf)
 * [Video](http://igg.unistra.fr/People/chermain/assets/avi/Chermain2020ProceduralVideo.mp4)
-* [WebGL](http://igg.unistra.fr/People/reproctex/Demos/Real_Time_Glint/)
+* [WebGL](http://igg.unistra.fr/People/reproctex/Demos/Real_Time_Glint/) (thanks to [Sylvain Thery](https://igg.icube.unistra.fr/index.php/Sylvain_Thery) for the WebGL implementation)
 * [Bibtex](http://igg.unistra.fr/People/chermain/assets/Chermain2020ProceduralBibtex.txt)
 
 The implementation reproduces real-time editing of the BRDF parameters, as shown

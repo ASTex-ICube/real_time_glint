@@ -5,11 +5,6 @@ layout (location = 1) in vec3 VertexNormal;
 layout (location = 2) in vec2 VertexTexCoord;
 layout (location = 3) in vec3 VertexTangent;
 
-uniform struct LightInfo {
-  vec4 Position;  // Light position in world coords.
-  vec3 L;         // Intensity
-} Light ;
-
 out vec2 TexCoord;
 out vec3 VertexPos;
 out vec3 VertexNorm;

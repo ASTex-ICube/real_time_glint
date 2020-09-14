@@ -18,8 +18,8 @@ Accepted for [Pacific Graphic 2020](https://pg2020.org/) and for CGF special iss
 * [Project page](http://igg.unistra.fr/People/chermain/real_time_glint/)
 * [Paper](http://igg.unistra.fr/People/chermain/assets/pdf/Chermain2020Procedural.pdf)
 * [Video](http://igg.unistra.fr/People/chermain/assets/avi/Chermain2020ProceduralVideo.mp4)
+* [WebGL](http://igg.unistra.fr/People/reproctex/Demos/Real_Time_Glint/)
 * [Bibtex](http://igg.unistra.fr/People/chermain/assets/Chermain2020ProceduralBibtex.txt)
-* [Shadertoy](https://www.shadertoy.com/view/WtsBRN)
 
 The implementation reproduces real-time editing of the BRDF parameters, as shown
 in the video of the paper, from 0:42 to 1:40.

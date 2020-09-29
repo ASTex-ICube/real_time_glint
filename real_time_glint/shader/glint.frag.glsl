@@ -369,21 +369,24 @@ vec3 f_P(vec3 wo, vec3 wi)
     vec2 dst1 = dFdy(texCoord);
 
     // Compute ellipse minor and major axes
-    float dst0LengthSquared = length(dst0);
-    dst0LengthSquared *= dst0LengthSquared;
-    float dst1LengthSquared = length(dst1);
-    dst1LengthSquared *= dst1LengthSquared;
+    float dst0LengthSquared = dst0.x*dst0.x + dst0.y*dst0.y;
+    float dst1LengthSquared = dst1.x*dst1.x + dst1.y*dst1.y;
 
     if (dst0LengthSquared < dst1LengthSquared)
     {
         // Swap dst0 and dst1
         vec2 tmp = dst0;
+        float tmpF = dst0LengthSquared;
+
         dst0 = dst1;
         dst1 = tmp;
+
+        dst0LengthSquared = dst1LengthSquared;
+        dst1LengthSquared = tmpF;
     }
-    float majorLength = length(dst0);
+    float majorLength = sqrt(dst0LengthSquared);
     // Alg. 1, line 5
-    float minorLength = length(dst1);
+    float minorLength = sqrt(dst1LengthSquared);
 
     // Clamp ellipse eccentricity if too large
     // Alg. 1, line 4
